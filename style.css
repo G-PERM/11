@@ -201,7 +201,8 @@ nav a {
     padding: 0;
     top: 0;
     right: 0;
-    background-color: #808080;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2vw);
     z-index: 1001;
   }
   .sideblur {
