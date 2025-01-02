@@ -85,18 +85,13 @@ nav a {
 .dropdown:hover .dropdownhover {
   display: inline-block;
 }
-.Main {
-  color: indianred;
-  margin: 0 auto 0 auto;
-  text-align: center;
-  width: 75vw;
-}
 .hero {
   width: 100vw;
   height: auto;
   margin: 0;
   margin-top: 6vw;
   padding: 0;
+  margin: 0;
   filter: brightness(50%);
   position: absolute;
   top: 0;
@@ -107,10 +102,11 @@ nav a {
   color: rgb(0, 255, 255);
   width: 100vw;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 6vw 0 0 0;
+  margin: 0;
 }
 .hero-subtext {
   display: block;
@@ -120,12 +116,37 @@ nav a {
   text-align: center;
   height: auto;
 }
+.hero,
+.hero-text {
+  margin: 6vw 0 0 0;
+  animation: mta 1s linear;
+}
+@keyframes mta {
+  from {
+    margin: 0 0 0 0;
+  }
+  to {
+    margin: 6vw 0 0 0;
+  }
+}
+.Main {
+  color: indianred;
+  margin: 6vw auto 0 auto;
+  text-align: center;
+  width: 75vw;
+  margin: 0 auto 0 auto;
+}
 .quote-container {
   width: 75vw;
   height: fit-content;
   display: flex;
+  flex-direction: row;
+  justify-content: start;
   padding: 0;
   margin: 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
 }
 .quote {
   display: flex;
@@ -133,7 +154,9 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-items: start;
   height: fit-content;
+  scroll-snap-align: center;
   padding: 2.5vw;
   margin: 2.5vw;
   background-color: darkslategray;
@@ -191,7 +214,7 @@ nav a {
     z-index: 1001;
   }
   .sidebar {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     text-align: center;
@@ -200,14 +223,15 @@ nav a {
     margin: 0;
     padding: 0;
     top: 0;
-    right: 0;
+    right: -25%;
     background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(0.5vw);
+    transition: all 0.25s linear;
     z-index: 1001;
   }
   .sideblur {
     display: none;
-    width: 75vw;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     left: 0;
@@ -215,8 +239,13 @@ nav a {
     margin: 0;
     padding: 0;
     background-color: transparent;
-    backdrop-filter: brightness(50%);
+    backdrop-filter: brightness(100%);
+    border: none;
+    transition: all 0.25s linear;
     overflow: hidden;
+  }
+  .sideblur:hover {
+    cursor: default;
   }
   .sidebar div {
     padding: 1vw 0 1vw 0;
@@ -252,16 +281,13 @@ nav a {
   .hero-text {
     font-size: 15vh;
   }
-  .quote-container {
-    flex-direction: column;
-    align-items: center;
-  }
   .quote {
-    width: 50vw;
+    width: 65vw;
     border-radius: 5vw;
   }
   .person {
-    width: 50vw;
+    width: 65vw;
+    border-radius: 5vw;
   }
   .quote::after {
     padding: 1vw;
@@ -320,16 +346,13 @@ nav a {
   .hero-text {
     font-size: 25vw;
   }
-  .quote-container {
-    flex-direction: row;
-    justify-content: center;
-  }
   .quote {
-    border-radius: 2.5vw;
     width: 15vw;
+    border-radius: 2.5vw;
   }
   .person {
     width: 15vw;
+    border-radius: 2.5vw;
   }
   .quote-position {
     font-size: 1.5vw;
