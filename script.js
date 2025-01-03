@@ -28,3 +28,12 @@ function adjustHeroTextHeight() {
   const HeroHeight = Hero.offsetHeight;
   HeroText.style.height = HeroHeight + "px";
 }
+quoteContainer = document.getElementsByClassName("quote-container")[0];
+width = screen.width;
+quoteContainerWidth = Math.round(width / 4);
+function previousQuote(quoteContainer, quoteContainerWidth) {
+  quoteContainer.scrollBy({ left: -quoteContainerWidth, behaviour: "smooth" });
+}
+function nextQuote(quoteContainer, quoteContainerWidth) {
+  quoteContainer.scrollBy({ left: quoteContainerWidth, behaviour: "smooth" });
+}

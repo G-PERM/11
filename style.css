@@ -133,8 +133,24 @@ nav a {
   color: indianred;
   margin: 6vw auto 0 auto;
   text-align: center;
-  width: 75vw;
+  width: 85vw;
   margin: 0 auto 0 auto;
+}
+.quote-mastercontainer {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.quote-mastercontainer button {
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: beige;
+  color: darkslategrey;
 }
 .quote-container {
   width: 75vw;
@@ -146,6 +162,7 @@ nav a {
   margin: 0;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   overflow-y: hidden;
 }
 .quote {
@@ -281,6 +298,16 @@ nav a {
   .hero-text {
     font-size: 15vh;
   }
+  .quote-mastercontainer {
+    width: 90vw;
+  }
+  .quote-mastercontainer button {
+    width: 5vw;
+    padding: 1.25vw;
+    margin: 1.25vw;
+    font-size: 5vw;
+    border-radius: 2vw;
+  }
   .quote {
     width: 65vw;
     border-radius: 5vw;
@@ -345,6 +372,16 @@ nav a {
   }
   .hero-text {
     font-size: 25vw;
+  }
+  .quote-mastercontainer {
+    width: 85vw;
+  }
+  .quote-mastercontainer button {
+    width: 3vw;
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 2vw;
+    border-radius: 1vw;
   }
   .quote {
     width: 15vw;
