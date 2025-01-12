@@ -28,12 +28,29 @@ function adjustHeroTextHeight() {
   const HeroHeight = Hero.offsetHeight;
   HeroText.style.height = HeroHeight + "px";
 }
-quoteContainer = document.getElementsByClassName("quote-container")[0];
-width = screen.width;
-quoteContainerWidth = Math.round(width / 4);
+setInterval(() => {
+  AutoScrollQuote(quoteContainer, quoteContainerWidth);
+}, 30000);
+const quoteContainer = document.getElementsByClassName("quote-container")[0];
+const quoteContainerWidth = Math.round(screen.width / 4);
 function previousQuote(quoteContainer, quoteContainerWidth) {
-  quoteContainer.scrollBy({ left: -quoteContainerWidth, behaviour: "smooth" });
+  quoteContainer.scrollBy({ left: -quoteContainerWidth, behavior: "smooth" });
 }
 function nextQuote(quoteContainer, quoteContainerWidth) {
-  quoteContainer.scrollBy({ left: quoteContainerWidth, behaviour: "smooth" });
+  quoteContainer.scrollBy({ left: quoteContainerWidth, behavior: "smooth" });
+}
+function autoScrollQuote(quoteContainer, quoteContainerWidth) {
+  const maxScrollLeft = quoteContainer.scrollWidth - quoteContainer.clientWidth;
+  const currentScrollLeft = quoteContainer.scrollLeft;
+
+  if (currentScrollLeft < maxScrollLeft) {
+    quoteContainer.scrollBy({ left: quoteContainerWidth, behavior: "smooth" });
+  } else {
+    quoteContainer.scrollLeft = 0;
+  }
+}
+function AutoScrollQuote(quoteContainer, quoteContainerWidth) {
+  if (quoteContainer) {
+    autoScrollQuote(quoteContainer, quoteContainerWidth);
+  }
 }
