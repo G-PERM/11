@@ -110,7 +110,7 @@ nav a {
 .hero-subtext {
   display: block;
   color: burlywood;
-  font-size: 5vw;
+  font-size: 3vw;
   max-width: 66.66vw;
   text-align: center;
   height: auto;
@@ -295,7 +295,7 @@ nav a {
     font-size: 2vh;
   }
   .hero-text {
-    font-size: 15vh;
+    font-size: 15vw;
   }
   .quote-mastercontainer {
     width: 85vw;
@@ -370,7 +370,7 @@ nav a {
     font-size: 3vw;
   }
   .hero-text {
-    font-size: 25vw;
+    font-size: 15vw;
   }
   .quote-mastercontainer {
     width: 85vw;
