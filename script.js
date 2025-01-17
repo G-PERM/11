@@ -30,7 +30,7 @@ function adjustHeroTextHeight() {
 }
 setInterval(() => {
   AutoScrollQuote(quoteContainer, quoteContainerWidth);
-}, 30000);
+}, 15000);
 const quoteContainer = document.getElementsByClassName("quote-container")[0];
 const quoteContainerWidth = Math.round(screen.width / 4);
 function previousQuote(quoteContainer, quoteContainerWidth) {
